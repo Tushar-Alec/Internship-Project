@@ -22,7 +22,7 @@ export default function Profile() {
   return (
     <div>
       <h2>Profile</h2>
-      <p>Username: {user.username}</p>
+      <p>Username: {user.name}</p>
       <p>Email: {user.email}</p>
     </div>
   );

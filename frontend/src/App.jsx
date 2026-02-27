@@ -2,7 +2,7 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./pages/login";
 import Signup from "./pages/Signup";
 import Profile from "./pages/Profile";
-import ProtectedRoute from "../../frontend-old/src/components/ProtectedRoute";
+import ProtectedRoute from "../../frontend/src/components/ProtectedRoute";
 
 function App() {
   return (
