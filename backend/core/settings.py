@@ -1,4 +1,3 @@
-# core/settings.py
 
 from pathlib import Path
 from datetime import timedelta
@@ -78,10 +77,9 @@ USE_TZ = True
 STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
-# ─── Custom User Model ────────────────────────────────────────────
+
 AUTH_USER_MODEL = 'users.User'
 
-# ─── DRF ─────────────────────────────────────────────────────────
 REST_FRAMEWORK = {
     'DEFAULT_AUTHENTICATION_CLASSES': (
         'rest_framework_simplejwt.authentication.JWTAuthentication',
@@ -91,14 +89,12 @@ REST_FRAMEWORK = {
     ),
 }
 
-# ─── JWT ─────────────────────────────────────────────────────────
 SIMPLE_JWT = {
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
     'ROTATE_REFRESH_TOKENS': True,
 }
 
-# ─── CORS ────────────────────────────────────────────────────────
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",  # Vite
     "http://localhost:3000",  # CRA
