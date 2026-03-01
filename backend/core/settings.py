@@ -1,4 +1,3 @@
-
 from pathlib import Path
 from datetime import timedelta
 from decouple import config
@@ -56,9 +55,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'core.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+    "default": {
+        "ENGINE": "django_mongodb_backend",
+        "HOST": config("MONGODB_URI"),
+        "NAME": "App_db", 
     }
 }
 
@@ -75,7 +75,7 @@ USE_I18N = True
 USE_TZ = True
 
 STATIC_URL = 'static/'
-DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+DEFAULT_AUTO_FIELD = 'django_mongodb_backend.fields.ObjectIdAutoField'
 
 
 AUTH_USER_MODEL = 'users.User'
