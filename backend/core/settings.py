@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'corsheaders',
     # local
     'users',
+    'profiles',
 ]
 
 MIDDLEWARE = [
