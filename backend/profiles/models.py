@@ -10,17 +10,17 @@ class Profile(models.Model):
         related_name='profile'
     )
 
-    # Step 1 - Education
+   
     education = models.JSONField(default=list)
-    # [{ degree, field, institution, year, status: completed/ongoing/planned }]
+   
 
-    # Step 2 - Skills & Interests
+    
     skills = models.JSONField(default=list)
-    # [{ name, level: beginner/intermediate/advanced }]
+   
     interests = models.JSONField(default=list)
-    # ["AI", "Design", "Finance"]
+    
 
-    # Step 3 - Career Goals
+   
     career_goal = models.CharField(max_length=255, blank=True)
     goal_type = models.CharField(
         max_length=20,
@@ -29,9 +29,9 @@ class Profile(models.Model):
     )
     target_role = models.CharField(max_length=255, blank=True)
     target_timeline = models.CharField(max_length=100, blank=True)
-    # e.g. "2 years", "as soon as possible"
+    
 
-    # Step 4 - Preferences
+    
     location = models.CharField(max_length=100, blank=True)
     preferred_work_type = models.CharField(
         max_length=20,
@@ -44,7 +44,7 @@ class Profile(models.Model):
         blank=True
     )
 
-    # Onboarding tracking
+   
     onboarding_step = models.IntegerField(default=0)  # 0-4
     onboarding_completed = models.BooleanField(default=False)
 

@@ -15,7 +15,7 @@ class SkillItemSerializer(serializers.Serializer):
     level = serializers.ChoiceField(choices=['beginner', 'intermediate', 'advanced'])
 
 
-# Step serializers — each handles one onboarding step
+
 
 class OnboardingStep1Serializer(serializers.ModelSerializer):
     education = EducationItemSerializer(many=True)

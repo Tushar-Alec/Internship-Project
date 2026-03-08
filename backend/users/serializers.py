@@ -17,7 +17,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    id = serializers.CharField(read_only=True)  # ObjectId → string
+    id = serializers.CharField(read_only=True)  
 
     class Meta:
         model = User
@@ -27,7 +27,6 @@ class MyTokenObtainPairSerializer(TokenObtainPairSerializer):
     @classmethod
     def get_token(cls, user):
         token = super().get_token(user)
-        # Add custom claims into the JWT payload
         token['email'] = user.email
         token['name'] = user.name
         return token
